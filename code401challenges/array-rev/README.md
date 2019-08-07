@@ -8,4 +8,10 @@ Time=n;
 Space=n;
 I could save space if I were to do it inplace. I'm pritty sure the best you can do is n. 
 ## Solution
-![]( ./assets/rev_arr.jpg)
+
+![](../assets/rev_arr.jpg)
+
+- [x] Whiteboard.
+- [x] Write method.
+- [x] Test method.
+- [x] Commit method.
