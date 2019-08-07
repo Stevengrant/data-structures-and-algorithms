@@ -1,2 +1,2 @@
 # CODE CHALLENGES
-<a href="./readmes/ArrayShift.md">array reverse</a>
+<a href="./readmes/ArrayShift.md">Array Shift</a>
