@@ -24,9 +24,9 @@ public class LinkedListTest{
         classUnderTest.insert(new String("Trees"));
         classUnderTest.insert(new String("Streams"));
         classUnderTest.insert(new String("Bushes"));
-        classUnderTest.insert(new String("War Crimes"));
+        classUnderTest.insert(new String("Mountains"));
         assertTrue("Returns true when value is present",classUnderTest.includes(new String("Bushes")));
-        assertTrue("Returns true when value is present",classUnderTest.includes(new String("War Crimes")));
+        assertTrue("Returns true when value is present",classUnderTest.includes(new String("Mountains")));
 
     }
     @Test public void test_includes_returnsFalseWhenNodeIsNotPresent(){
