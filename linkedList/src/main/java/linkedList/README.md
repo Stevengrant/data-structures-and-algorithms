@@ -9,3 +9,5 @@ Everything is O(n) time and O(1) space
 ## Solution
 
 ![](./../../resources/image_from_ios.jpg)
+
+Jakie, Neu, Roman, Steven 
