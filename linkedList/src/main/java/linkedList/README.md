@@ -8,4 +8,4 @@ Implement different inserts and appends
 Everything is O(n) time and O(1) space
 ## Solution
 
-![](./../resources/image_from_ios.jpg)
+![](./../../resources/image_from_ios.jpg)
