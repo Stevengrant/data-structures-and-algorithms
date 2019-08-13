@@ -43,4 +43,32 @@ public class LinkedListTest{
         classUnderTest.insert(new String("Mints"));
         assertTrue("Returns a string of the values", classUnderTest.toString().equals("Mints,Old Skool Hip Hop,Tooth brush,Salmon"));
     }
+    @Test public void test_append_appendsToALinkedListThatHasAValue(){
+
+        classUnderTest = new LinkedList();
+        classUnderTest.insert(new String("Salmon"));
+        assertTrue("Should append",classUnderTest.head.value.equals("Salmon"));
+        classUnderTest.append("coffee");
+        assertTrue("Should append",classUnderTest.head.next.value.equals("coffee"));
+        classUnderTest.append("Fancy stuff");
+        assertTrue("Should append",classUnderTest.head.next.next.value.equals("Fancy stuff"));
+    }
+    @Test public void test_insertBefore_shouldInsertBefore(){
+        classUnderTest = new LinkedList();
+        classUnderTest.insert(4);
+        classUnderTest.insert(3);
+        classUnderTest.insert(2);
+        classUnderTest.insert(1);
+        classUnderTest.insertBefore(3,22);
+        assertTrue("Should insert value before",classUnderTest.head.next.next.value.equals(22));
+    }
+    @Test public void test_insertAfter(){
+        classUnderTest = new LinkedList();
+        classUnderTest.insert(3);
+        classUnderTest.insert(2);
+        classUnderTest.insert(1);
+        classUnderTest.insertAfter(2,22);
+        assertTrue("Should insert after", classUnderTest.head.next.next.value.equals(22));
+
+    }
 }

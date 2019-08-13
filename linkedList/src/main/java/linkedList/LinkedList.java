@@ -26,6 +26,47 @@ public class LinkedList<T> {
         Node newNode = new Node(value, head);
         this.head = newNode;
     }
+    public void insertBefore(T value, T newValue) {
+        if (this.head == null){
+            this.head = new Node(newValue, null);
+            return;
+        }
+        Node current = this.head;
+        while(current.next != null){
+            if ( current.next.value.equals(value)){
+                Node newNode = new Node (newValue, current.next);
+                current.next = newNode;
+                return;
+            }
+            current = current.next;
+        }
+        Node newNode = new Node (newValue, null);
+        current.next = newNode;
+    }
+
+    public void insertAfter(T value, T newVal) {
+    if(this.head == null){
+        this.head = new Node (newVal, null);
+        return;
+    }
+    Node current = this.head;
+    while ( current.next != null){
+        if(current.value.equals(value)){
+            Node newNode = new Node(newVal, current.next);
+            current.next = newNode;
+            return;
+        }
+        current = current.next;
+    }
+    current.next = new Node(newVal, null);
+    }
+    public void append(T value){
+        Node current =this.head;
+        while(current.next != null){
+            current = current.next;
+        }
+        current.next = new Node(value,null);
+    }
     public boolean includes(T value){
         Node node = this.head;
 
