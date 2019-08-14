@@ -3,7 +3,10 @@
  */
 package linkedList;
 
+import org.apache.commons.math3.exception.OutOfRangeException;
+
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 
 class Node <T> {
@@ -25,6 +28,21 @@ public class LinkedList<T> {
     public void insert( T value){
         Node newNode = new Node(value, head);
         this.head = newNode;
+    }
+    public T kthFromEnd (int k){
+        ArrayList<Node> convertedArr= new ArrayList<>();
+        Node current = this.head;
+        while (current != null){
+            convertedArr.add(current);
+            current = current.next;
+        }
+        if (k > convertedArr.size()-1){
+            //Throw exeption
+            throw new IndexOutOfBoundsException();
+        }
+        T res = (T) convertedArr.get(((convertedArr.size()) - 1) - k).value;
+        return res;
+//        return convertedArr[convertedArr.size()-1 -k].value;
     }
     public void insertBefore(T value, T newValue) {
         if (this.head == null){

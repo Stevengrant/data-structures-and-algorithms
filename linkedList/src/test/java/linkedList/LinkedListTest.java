@@ -69,6 +69,30 @@ public class LinkedListTest{
         classUnderTest.insert(1);
         classUnderTest.insertAfter(2,22);
         assertTrue("Should insert after", classUnderTest.head.next.next.value.equals(22));
+    }
+    @Test public void test_LinkedList_kthFromEnd_ReturnsNodeWhenIndexExists(){
+        classUnderTest = new LinkedList();
+        classUnderTest.insert(4);
+        classUnderTest.insert(3);
+        classUnderTest.insert(2);
+        classUnderTest.insert(1);
+        assertEquals("should return the correct value",classUnderTest.kthFromEnd(2),2);
 
     }
+    @Test public void test_LinkedList_kthFromEnd_ThrowsExeptionWhenOutOfBounds(){
+        classUnderTest = new LinkedList();
+        classUnderTest.insert(4);
+        classUnderTest.insert(3);
+        classUnderTest.insert(2);
+        classUnderTest.insert(1);
+        try{
+            classUnderTest.kthFromEnd(5);
+        } catch(Exception e){
+            assertTrue("Should throw a exeption when out of bounds",true);
+        }
+        //https://www.baeldung.com/junit-assert-exception
+
+    }
+
+
 }
