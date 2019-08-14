@@ -70,6 +70,7 @@ public class LinkedListTest{
         classUnderTest.insertAfter(2,22);
         assertTrue("Should insert after", classUnderTest.head.next.next.value.equals(22));
     }
+    //            “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
     @Test public void test_LinkedList_kthFromEnd_ReturnsNodeWhenIndexExists(){
         classUnderTest = new LinkedList();
         classUnderTest.insert(4);
@@ -79,6 +80,7 @@ public class LinkedListTest{
         assertEquals("should return the correct value",classUnderTest.kthFromEnd(2),2);
 
     }
+    //    Where k is greater than the length of the linked list
     @Test public void test_LinkedList_kthFromEnd_ThrowsExeptionWhenOutOfBounds(){
         classUnderTest = new LinkedList();
         classUnderTest.insert(4);
@@ -88,11 +90,47 @@ public class LinkedListTest{
         try{
             classUnderTest.kthFromEnd(5);
         } catch(Exception e){
-            assertTrue("Should throw a exeption when out of bounds",true);
+            assertTrue("Should throw a exeption when out of bounds",e.toString().equals("java.lang.IndexOutOfBoundsException"));
         }
         //https://www.baeldung.com/junit-assert-exception
 
     }
 
+
+//    Where k and the length of the list are the same
+@Test public void test_LinkedList_kthFromEnd_ReturnsNodeWhenIndexExists_andKistheLengOfTheList(){
+    classUnderTest = new LinkedList();
+    classUnderTest.insert(4);
+    classUnderTest.insert(3);
+    classUnderTest.insert(2);
+    classUnderTest.insert(1);
+    assertEquals("should return the correct value",classUnderTest.kthFromEnd(3),1);
+
+}
+//    Where k is not a positive integer
+@Test public void test_LinkedList_kthFromEnd_ThrowsExeptionWhenOutOfBounds_kIsNegitive(){
+    classUnderTest = new LinkedList();
+    classUnderTest.insert(4);
+    classUnderTest.insert(3);
+    classUnderTest.insert(2);
+    classUnderTest.insert(1);
+    try{
+        classUnderTest.kthFromEnd(5);
+    } catch(Exception e){
+        assertTrue("Should throw a exeption when out of bounds",e.toString().equals("java.lang.IndexOutOfBoundsException"));
+    }
+    //https://www.baeldung.com/junit-assert-exception
+
+}
+
+
+//    Where the linked list is of a size 1
+
+    @Test public void test_LinkedList_kthFromEnd_ReturnsNodeWhenIndexExists_andListSizeIsOne(){
+        classUnderTest = new LinkedList();
+        classUnderTest.insert(1);
+        assertEquals("should return the correct value",classUnderTest.kthFromEnd(0),1);
+
+    }
 
 }
