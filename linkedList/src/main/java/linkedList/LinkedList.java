@@ -61,7 +61,20 @@ public class LinkedList<T> {
         Node newNode = new Node (newValue, null);
         current.next = newNode;
     }
+    public boolean mergeLists(LinkedList two){
+        Node temp1;
 
+        Node currentOne = this.head;
+        Node currentTwo = two.head;
+        while(currentOne.next != null){
+            temp1 = currentOne.next;
+            currentOne.next = currentTwo;
+            currentTwo = currentTwo.next;
+            currentOne.next.next = temp1;
+        }
+        System.out.println(this.toString());
+        return true;
+    }
     public void insertAfter(T value, T newVal) {
     if(this.head == null){
         this.head = new Node (newVal, null);
@@ -106,7 +119,6 @@ public class LinkedList<T> {
             res+=node.value + ",";
             node = node.next;
         }
-        res+=node.value;
         return res;
     }
 }
