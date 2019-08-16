@@ -141,7 +141,7 @@ public class LinkedListTest{
         classUnderTest2.insert(4);
         classUnderTest2.insert(5);
         classUnderTest2.insert(6);
-        classUnderTest.mergeLists(classUnderTest2);
+        classUnderTest.mergeLists(classUnderTest.head,classUnderTest2.head);
         int foo = 0;
 
     }

@@ -61,19 +61,18 @@ public class LinkedList<T> {
         Node newNode = new Node (newValue, null);
         current.next = newNode;
     }
-    public boolean mergeLists(LinkedList two){
-        Node temp1;
-
-        Node currentOne = this.head;
-        Node currentTwo = two.head;
-        while(currentOne.next != null){
-            temp1 = currentOne.next;
-            currentOne.next = currentTwo;
-            currentTwo = currentTwo.next;
-            currentOne.next.next = temp1;
+    public Node mergeLists(Node one ,Node two){
+        //Following along in class.
+        if (one == null){
+            return two;
+        } else if (two == null){
+            return one;
+        } else {
+            Node restOfLists = mergeLists(one.next,two.next);
+            one.next = two;
+            two.next = restOfLists;
+            return one;
         }
-        System.out.println(this.toString());
-        return true;
     }
     public void insertAfter(T value, T newVal) {
     if(this.head == null){
@@ -109,14 +108,16 @@ public class LinkedList<T> {
         }
         return false;
     }
+
     public String isAlive(){
         return new String("Am alive");
     }
+
     public String toString(){
-        String res = new String();
+        String res = "";
         Node node = this.head;
         while(node.next != null){
-            res+=node.value + ",";
+            res += node.value + ",";
             node = node.next;
         }
         return res;
