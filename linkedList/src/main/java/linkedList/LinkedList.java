@@ -61,7 +61,19 @@ public class LinkedList<T> {
         Node newNode = new Node (newValue, null);
         current.next = newNode;
     }
-
+    public Node mergeLists(Node one ,Node two){
+        //Following along in class.
+        if (one == null){
+            return two;
+        } else if (two == null){
+            return one;
+        } else {
+            Node restOfLists = mergeLists(one.next,two.next);
+            one.next = two;
+            two.next = restOfLists;
+            return one;
+        }
+    }
     public void insertAfter(T value, T newVal) {
     if(this.head == null){
         this.head = new Node (newVal, null);
@@ -96,17 +108,18 @@ public class LinkedList<T> {
         }
         return false;
     }
+
     public String isAlive(){
         return new String("Am alive");
     }
+
     public String toString(){
-        String res = new String();
+        String res = "";
         Node node = this.head;
         while(node.next != null){
-            res+=node.value + ",";
+            res += node.value + ",";
             node = node.next;
         }
-        res+=node.value;
         return res;
     }
 }
