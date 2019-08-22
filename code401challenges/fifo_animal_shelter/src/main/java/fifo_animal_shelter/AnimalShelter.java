@@ -28,10 +28,10 @@ public class AnimalShelter {
     }
     public Animal dequeue(String pref){
         if(pref.equals("dog")){
-            return getPet(this.dogs);
+            return getPet(this.dogs, "dog");
         }
         else if (pref.equals("cat")){
-            return getPet(this.cats);
+            return getPet(this.cats, "cat");
         }
         else{
             return null;
@@ -39,7 +39,7 @@ public class AnimalShelter {
 
     }
 
-    private Animal getPet(Node petsLinkedList) {
+    private Animal getPet(Node petsLinkedList, String type) {
         Animal res = null;
         Node current = petsLinkedList;
         Node prev = null;
@@ -53,7 +53,12 @@ public class AnimalShelter {
         }
         res = current.value;
         if(prev == null){
-            petsLinkedList = null;
+            if( type.equals("dog")){
+                this.dogs = null;
+            } else {
+                this.cats = null;
+            }
+
         } else {
             prev.next = null;
         }

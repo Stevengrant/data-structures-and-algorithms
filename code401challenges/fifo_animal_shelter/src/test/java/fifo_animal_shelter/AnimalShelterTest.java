@@ -54,20 +54,20 @@ public class AnimalShelterTest {
         assertNull(shelter.cats);
         shelter.dequeue("dog");
         assertNull(shelter.dogs);
-//        assertNull(shelter.cats);
-//        shelter.enqueue(scruff);
-//
-//        Animal duff = new Animal("Duff","dog");
-//        shelter.enqueue(duff);
-//
-//        Animal spot = new Animal("Spot","dog");
-//        shelter.enqueue(spot);
-//
-//        Animal fluff = new Animal("Fluff","cat");
-//        shelter.enqueue(fluff);
-//
-//        Animal mrTinkles = new Animal("Mr Tinkles esquire","cat");
-//        shelter.enqueue(mrTinkles);
+        assertNull(shelter.cats);
+        shelter.enqueue(scruff);
+
+        Animal duff = new Animal("Duff","dog");
+        shelter.enqueue(duff);
+
+        Animal spot = new Animal("Spot","dog");
+        shelter.enqueue(spot);
+
+        Animal fluff = new Animal("Fluff","cat");
+        shelter.enqueue(fluff);
+
+        Animal mrTinkles = new Animal("Mr Tinkles esquire","cat");
+        shelter.enqueue(mrTinkles);
 
 
 
