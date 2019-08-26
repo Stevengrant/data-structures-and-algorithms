@@ -9,8 +9,8 @@ public class TreeNode<T> {
         return right;
     }
 
-    private TreeNode left;
-    private TreeNode right;
+    public TreeNode left;
+    public TreeNode right;
     T value;
     public TreeNode(TreeNode left, TreeNode right, T value){
         this.left = left;
