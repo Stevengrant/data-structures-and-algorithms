@@ -5,6 +5,8 @@
 <a href="401/src/main/java/code401challenges/MultiBracketValidation/README"> Multi Bracket Validation</a>
 
 
+<a href="401/src/main/java/code401challenges/fizzbuzzTree/README.md"> Fizz Buzz tree</a>
+
 #### insert 
 Takes any value and inserts it at the head of the linked list.
 
