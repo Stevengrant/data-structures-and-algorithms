@@ -37,4 +37,4 @@ SpaceO(n)
 
 ####
 
-![](./../resources/biggestTree.jpg)
+![](biggestTree.jpg)
