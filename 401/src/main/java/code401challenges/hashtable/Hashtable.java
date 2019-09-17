@@ -1,5 +1,7 @@
 package code401challenges.hashtable;
 
+import code401challenges.tree.TreeNode;
+
 public class Hashtable {
     public HashNode[] arr;
     public Hashtable(){
@@ -46,5 +48,10 @@ public class Hashtable {
             accum += letters[i];
         }
         return (accum * prime) % arrLeng;
+    }
+    public void tree_intersection(TreeNode node1, TreeNode node2){
+
+
+
     }
 }
