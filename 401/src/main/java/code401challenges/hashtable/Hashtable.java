@@ -1,5 +1,10 @@
 package code401challenges.hashtable;
 
+import code401challenges.tree.TreeNode;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Hashtable {
     public HashNode[] arr;
     public Hashtable(){
@@ -10,9 +15,9 @@ public class Hashtable {
         if(arr[hashIndex] == null){
             arr[hashIndex] = new HashNode(key, value);
         }
-        //colision, rebuild new arr w/ 2 length
+        //colision, rebuild new arr w/ longer array
         else {
-            HashNode[] temp = new HashNode[arr.length * 2];
+            HashNode[] temp = new HashNode[arr.length+1];
             temp[hash(key, temp.length)] = new HashNode(key,value);
             for(int i = 0; i < arr.length; i ++){
                 //we have a value here
@@ -20,11 +25,15 @@ public class Hashtable {
                     hashIndex = hash(arr[i].getKey(), temp.length);
                     //another collision
                     if (temp[hashIndex]!= null){
-                        temp = new HashNode[temp.length * 2];
+                        temp = new HashNode[temp.length+1];
+                        if(temp.length > 1000){
+                            System.out.println("what");
+                        }
+
                         i = 0;
                         temp[hash(key, temp.length)] = new HashNode(key,value);
                     }
-                    temp[hashIndex] = arr[i];
+                     temp[hashIndex] = arr[i];
                 }
             }
             arr = temp;
@@ -46,5 +55,30 @@ public class Hashtable {
             accum += letters[i];
         }
         return (accum * prime) % arrLeng;
+    }
+    private List<TreeNode> res = new ArrayList<>();
+    public List<TreeNode> tree_intersection(TreeNode node1, TreeNode node2){
+        arr = new HashNode[2];
+        treeIntersectRecurseAndCheck(node1);
+        treeIntersectRecurseAndCompare(node2);
+        return res;
+    }
+    private void treeIntersectRecurseAndCheck(TreeNode node){
+        if(node == null){
+            return;
+        }
+        add(node.sValue,"Value Doesn't matter");
+        treeIntersectRecurseAndCheck(node.left);
+        treeIntersectRecurseAndCheck(node.right);
+    }
+    private void treeIntersectRecurseAndCompare(TreeNode node){
+        if(node == null){
+            return;
+        }
+        if(!contains(node.sValue)){
+            res.add(node);
+        }
+        treeIntersectRecurseAndCompare(node.left);
+        treeIntersectRecurseAndCompare(node.right);
     }
 }
