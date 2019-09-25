@@ -40,18 +40,18 @@ public class GraphTest {
     public void getNodes() {
         GNode root = new GNode("THIS IS THE ROOT");
         Graph graph = new Graph(root);
-        root.addNode("Child Node 1");
-        root.addNode("Child Node 2");
-        root.addNode("Child Node 3");
-        root.addNode("Child Node 4");
-        root.addNode("Child Node 5");
-        root.addNode("Child Node 6");
-        root.addNode("Child Node 7");
-        root.getEdges().get(0).getLeft().addNode("Child 8");
-        root.getEdges().get(0).getLeft().addNode("Child 9");
-        root.getEdges().get(0).getLeft().addNode("Child 10");
-        root.getEdges().get(0).getLeft().addNode("Child 11");
-        root.getEdges().get(0).getLeft().addNode("Child 12");
+        root.addNode("Child Node 1",0);
+        root.addNode("Child Node 2",0);
+        root.addNode("Child Node 3",0);
+        root.addNode("Child Node 4",0);
+        root.addNode("Child Node 5",0);
+        root.addNode("Child Node 6",0);
+        root.addNode("Child Node 7",0);
+        root.getEdges().get(0).getLeft().addNode("Child 8",0);
+        root.getEdges().get(0).getLeft().addNode("Child 9",0);
+        root.getEdges().get(0).getLeft().addNode("Child 10",0);
+        root.getEdges().get(0).getLeft().addNode("Child 11",0);
+        root.getEdges().get(0).getLeft().addNode("Child 12",0);
         root.getEdges().get(0).getLeft().getEdges().get(0).getLeft().addNode(root);
         List<GNode> res = graph.getNodes();
 
@@ -62,12 +62,12 @@ public class GraphTest {
     public void getNeighbors() {
         GNode root = new GNode("THIS IS THE ROOT");
         Graph graph = new Graph(root);
-        root.addNode("Child Node 1");
-        root.addNode("Child Node 2");
-        root.addNode("Child Node 3");
-        root.addNode("Child Node 4");
-        root.addNode("Child Node 5");
-        root.addNode("Child Node 6");
+        root.addNode("Child Node 1",0);
+        root.addNode("Child Node 2",0);
+        root.addNode("Child Node 3",0);
+        root.addNode("Child Node 4",0);
+        root.addNode("Child Node 5",0);
+        root.addNode("Child Node 6",0);
 
         List<GNode> res = graph.getNeighbors(root);
 
@@ -78,18 +78,18 @@ public class GraphTest {
     public void size() {
         GNode root = new GNode("THIS IS THE ROOT");
         Graph graph = new Graph(root);
-        root.addNode("Child Node 1");
-        root.addNode("Child Node 2");
-        root.addNode("Child Node 3");
-        root.addNode("Child Node 4");
-        root.addNode("Child Node 5");
-        root.addNode("Child Node 6");
-        root.addNode("Child Node 7");
-        root.getEdges().get(0).getLeft().addNode("Child 8");
-        root.getEdges().get(0).getLeft().addNode("Child 9");
-        root.getEdges().get(0).getLeft().addNode("Child 10");
-        root.getEdges().get(0).getLeft().addNode("Child 11");
-        root.getEdges().get(0).getLeft().addNode("Child 12");
+        root.addNode("Child Node 1",0);
+        root.addNode("Child Node 2",0);
+        root.addNode("Child Node 3",0);
+        root.addNode("Child Node 4",0);
+        root.addNode("Child Node 5",0);
+        root.addNode("Child Node 6",0);
+        root.addNode("Child Node 7",0);
+        root.getEdges().get(0).getLeft().addNode("Child 8",0);
+        root.getEdges().get(0).getLeft().addNode("Child 9",0);
+        root.getEdges().get(0).getLeft().addNode("Child 10",0);
+        root.getEdges().get(0).getLeft().addNode("Child 11",0);
+        root.getEdges().get(0).getLeft().addNode("Child 12",0);
         root.getEdges().get(0).getLeft().getEdges().get(0).getLeft().addNode(root);
         List<GNode> res = graph.getNodes();
 

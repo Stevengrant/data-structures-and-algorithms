@@ -8,9 +8,9 @@ public class GNode {
         this.edges = new ArrayList(){};
         this.value = value;
     }
-    public GNode addNode(String val){
+    public GNode addNode(String val, int weight){
         GNode node = new GNode(val);
-        GEdge newEdge = new GEdge(node, this,0);
+        GEdge newEdge = new GEdge(node, this,weight);
         node.edges.add(newEdge);
         this.edges.add(newEdge);
         return node;
